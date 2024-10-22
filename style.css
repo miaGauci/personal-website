@@ -1,0 +1,449 @@
+/* Import Fonts */
+@font-face {
+    font-family: 'Nimbus';
+    src: url('tan-nimbus.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Casanova';
+    src: url('CasanovaRegular-gx0J4.otf') format('truetype');
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Casanova', sans-serif;
+    background-color: #F5EFEB; /* Beige background */
+    color: #567C8D; /* Global font color */
+}
+
+/* Container to Center the Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 10px 20px; /* Padding inside the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #F5EFEB; /* Match background color */
+    padding: 10px 0;
+    border-bottom: 1px solid #567C8D; /* Border at the bottom */
+    position: sticky; /* Keep header at the top */
+    top: 0; /* Stick to top */
+    z-index: 1000; /* Ensure header is on top */
+}
+
+/* Logo Section */
+.logo a {
+    font-size: 24px;
+    font-family: 'Nimbus', sans-serif;
+    font-weight: bold;
+    color: #567C8D; /* Logo color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Navigation Menu */
+.main-nav {
+    display: flex;
+    justify-content: center; /* Centre the navigation items */
+    align-items: center;
+    flex-grow: 1;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Space between menu items */
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li {
+    display: inline;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #567C8D; /* Dark color for the navigation */
+    font-weight: 500;
+}
+
+/* Social Icons Section */
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin-right: 15px; /* Spacing between icons */
+    color: #567C8D; /* Same font color */
+}
+
+.social-icons a:hover {
+    color: #567C8D; /* Slightly darker on hover */
+}
+
+.social-icons i {
+    font-size: 24px; /* Icon size */
+}
+
+/* Main Content Styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+    padding: 50px 20px;
+}
+
+/* Welcome Message Styles */
+.welcome-message {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 70px;
+    color: #567C8D;
+    text-align: center; /* Center the text */
+    margin: 50px auto;
+}
+
+/* Image Container Styles */
+.image-container {
+    display: flex;
+    justify-content: center; /* Center images */
+    align-items: flex-end; /* Align images to the bottom */
+    gap: 20px; /* General spacing between images */
+    margin: 50px auto; /* Center the image container */
+    width: 90%; /* Adjust width as needed */
+}
+
+/* Individual Image Styles */
+.image-container img {
+    max-height: 400px;
+    width: auto;
+    object-fit: cover;
+    margin: 0 10px; /* Margin between images */
+}
+
+/* Specific Image Positioning */
+.image-container img:first-child {
+    height: 250px; /* Smaller height for the first image */
+    align-self: flex-start; /* Align first image at the top */
+    margin-top: -50px; /* Move the image upwards */
+}
+
+.image-container img:nth-child(2) {
+    height: 400px; /* Larger height for the middle image */
+}
+
+.image-container img:nth-child(3) {
+    height: 250px; /* Smaller height for the third image */
+    transform: translateY(-50px); /* Move the third image upwards */
+}
+
+/* Landscape Section Styles */
+.landscape-section {
+    width: 100%; /* Full width of the section */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #F5EFEB; /* Match background color */
+    text-align: center; /* Center content */
+}
+
+.landscape-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensure image covers the full area */
+    margin: 0 auto;
+}
+
+/* Blog Posts Section */
+
+.blog-posts {
+    display: flex;
+    justify-content: space-between; /* Spread items evenly */
+    margin: 50px auto; /* Center the section and add space around */
+    width: 90%; /* Control the width of the section */
+}
+
+/* Blog Link Styling */
+.blog-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link fill the entire block */
+}
+
+/* Individual Blog Post Styles */
+/* Individual Blog Post Styles */
+.blog-post {
+    cursor: pointer; /* Pointer cursor for interaction */
+    text-align: center;
+    height: 550px; 
+    background-color: #F5EFEB;
+    padding: 20px;
+    border: 1px solid #DDD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    flex: 1; /* Allow each blog post to flex equally */
+    margin: 0 10px; /* Add margin between the posts */
+    transition: transform 0.2s ease; /* Optional: smooth scale effect */
+    max-width: 350px; /* Set a maximum width to keep each post proportional */
+}
+
+
+.blog-post:hover {
+    transform: scale(1.02); /* Optional: slight scale effect on hover */
+}
+
+/* Blog Post Image Styles */
+/* Blog Post Image Styles */
+.blog-image {
+    width: 100%; /* Make the image take full width of the container */
+    height: auto;
+    max-height: 350px; /* Increase the max height to maintain a portrait aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+
+/* Blog Post Text Styles */
+.blog-post h3 {
+    font-family: 'Nimbus', sans-serif;
+    color: #567C8D;
+    font-size: 24px;
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.blog-post p {
+    font-family: 'Casanova', sans-serif;
+    color: #567C8D;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+
+/* Footer Section Styles */
+.site-footer {
+    width: 100%; /* Full width */
+    background-color: #2F4156; /* Dark footer background */
+    color: #FFFFFF; /* White text color */
+    text-align: center; /* Center the footer text */
+    padding: 20px 0;
+}
+
+.site-footer p {
+    margin: 0;
+    font-family: 'Nimbus', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* BLOG SECTION */
+
+/* Blog Section */
+.blog-section {
+    background-color: #F5EFEB; /* Beige background */
+    padding: 15px 15px;
+}
+
+/* Mosaic Grid Layout */
+.mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr)); /* Flexible grid */
+    grid-auto-rows: 200px; /* Default row height */
+    gap: 15px; /* Space between items */
+}
+
+/* Mosaic Items: Landscape, Portrait, Square */
+.mosaic-item {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out; /* Scale on hover */
+}
+
+/* Landscape Posts */
+.mosaic-item.landscape {
+    grid-column: span 3; /* Span across two columns */
+    grid-row: span 2; /* Default row height */
+    background-image: url('images/gozo.jpeg') /* Add your own image */
+}
+
+/* Portrait Posts */
+.mosaic-item.portrait {
+    grid-column: span 1;
+    grid-row: span 2; /* Taller */
+    background-image: url('images/pool.jpeg'); /* Add your own image */
+}
+
+/* Square Posts */
+.mosaic-item.square {
+    grid-column: span 2;
+    grid-row: span 2; /* Same height and width */
+    background-image: url('images/umbrella.jpeg'); /* Add your own image */
+}
+
+/* Hover Effect */
+.mosaic-item:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Overlay for text */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly visible by default */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+/* Increase the opacity of the overlay background on hover */
+.mosaic-item:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+}
+
+/* Text inside the overlay */
+.overlay .text {
+    color: white;
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out; /* Fade-in effect */
+}
+
+/* Show text on hover */
+.mosaic-item:hover .overlay .text {
+    opacity: 1; /* Show text on hover */
+}
+
+.overlay .text .date {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.overlay .text h2 {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.overlay .text .read-more {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.overlay .text .read-more:hover {
+    color: #ccc; /* Slight color change on hover */
+}
+
+/* Footer */
+.site-footer {
+    background-color: #2F4156;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* PHOTOGRAPHY */
+
+/* Photography Section */
+
+.photo-grid {
+    column-count: 3; /* Number of columns in your layout */
+    column-gap: 5px; /* Space between columns */
+    padding: 10px 10px; 
+    gap: 10px; 
+  }
+  
+  .photo-item {
+    display: inline-block;
+    margin-bottom: 5px; /* Space between rows */
+    width: 100%; /* Makes sure items fit in their column */
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: auto; /* Maintain the aspect ratio */
+    display: block;
+  }
+  
+  
+  
+/* BLOG WRITEUP STYLE  */
+
+/* Blog Content Styling */
+.blog-post-content {
+    width: 70%; /* Adjust width as needed to fit the page */
+    margin: 50px auto 70px; /* Center the content and add bottom margin */
+    text-align: left; /* Align all text to the right */
+    padding: 10; /* Remove padding */
+    background-color: transparent; /* Make background transparent */
+    border: none; /* Remove any border */
+    box-shadow: none; /* Remove box shadow */
+  }
+  
+  /* Publish Date */
+  .publish-date {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 16px;
+    color: #567C8D;
+    margin: 0 0 10px 0; /* Add bottom margin */
+  }
+  
+  /* Blog Title */
+  .blog-title {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 32px;
+    color: #2F4156;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  /* Blog Writing */
+  .blog-writing {
+    font-family: 'Casanova', sans-serif;
+    font-size: 18px;
+    color: #2F4156;
+    line-height: 1.6;
+  }
+  
+  /* Blog Navigation Arrows */
+  .blog-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 70%; /* Align arrows with the content width */
+    margin: 0 auto 50px; /* Center arrows and add space at the bottom */
+  }
+  
+  .nav-arrow {
+    text-decoration: none;
+    font-family: 'Nimbus', sans-serif;
+    font-size: 18px;
+    color: #567C8D;
+    padding: 10px 20px;
+    border: 1px solid #567C8D;
+    background-color: #F5EFEB;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-arrow:hover {
+    background-color: #567C8D;
+    color: #FFF;
+  }
+  
