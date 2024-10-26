@@ -361,29 +361,39 @@ body {
 }
 
 /* PHOTOGRAPHY */
-
-/* Photography Section */
-
 .photo-grid {
-    column-count: 3; /* Number of columns in your layout */
-    column-gap: 5px; /* Space between columns */
-    padding: 10px 10px; 
-    gap: 10px; 
-  }
-  
-  .photo-item {
+    column-count: 3; /* Default number of columns for desktop */
+    column-gap: 10px; /* Space between columns */
+    padding: 10px;
+}
+
+.photo-item {
     display: inline-block;
-    margin-bottom: 5px; /* Space between rows */
-    width: 100%; /* Makes sure items fit in their column */
-  }
-  
-  .photo-item img {
-    width: 100%;
-    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 10px; /* Space between rows */
+    width: 100%; /* Ensure images take up full width of their column */
+    break-inside: avoid; /* Prevent images from breaking across columns */
+}
+
+.photo-item img {
+    width: 100%; /* Ensure image takes up full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop images if necessary, without distortion */
     display: block;
-  }
-  
-  
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1200px) {
+    .photo-grid {
+        column-count: 2; /* Two columns on medium-sized screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        column-count: 1; /* One column on small screens (mobile) */
+    }
+}
+
   
 /* BLOG WRITEUP STYLE  */
 

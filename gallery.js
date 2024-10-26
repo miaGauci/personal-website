@@ -33,11 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
     photoGrid.appendChild(gridItem);
   });
 
-  // Initialize Masonry after all images have been loaded
-  const msnry = new Masonry(photoGrid, {
-    itemSelector: '.photo-item',
-    columnWidth: '.photo-item',
-    percentPosition: true,
-    gutter: 8 // Reduced gap between images
+  // Use imagesLoaded to ensure images are fully loaded before initializing Masonry
+  imagesLoaded(photoGrid, () => {
+    const msnry = new Masonry(photoGrid, {
+      itemSelector: '.photo-item',
+      columnWidth: '.photo-item',
+      percentPosition: true,
+      gutter: 8 // Reduced gap between images
+    });
   });
 });
