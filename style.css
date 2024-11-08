@@ -318,40 +318,83 @@ body {
   
 @media (max-width: 768px) {
     .container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         padding: 5px 10px;
     }
 
     .logo a {
-        font-size: 20px;
+        font-size: 18px; /* Reduce the font size if needed */
     }
 
+    .social-icons {
+        display: flex;
+        gap: 2px; /* Reduce gap between social icons */
+        font-size: 10px;
+    }
+
+    /* Center the Hamburger Menu */
     .hamburger-menu {
-        display: block; /* Show hamburger button on small screens */
-        font-size: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #567C8D;
+        cursor: pointer;
     }
 
-    .social-icons i {
-        font-size: 20px;
-    }
-
-    /* Hide navigation menu by default on mobile and show only when toggled */
+    /* Navigation Menu - Centered Underneath Hamburger Toggle */
     .main-nav ul {
-        display: none; /* Hidden by default on small screens */
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%; /* Place it directly below the hamburger menu */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center the dropdown */
+        width: auto; /* Width based on content */
         flex-direction: column;
+        align-items: center; /* Center items horizontally */
         gap: 10px;
         padding: 10px 0;
-        background-color: #F5EFEB;
-        width: 100%;
+        background-color: #F5EFEB; /* Set a solid background color */
         text-align: center;
-        border-top: 1px solid #567C8D;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
     }
 
+    /* Show the navigation menu when the 'menu-open' class is active */
     .main-nav.menu-open ul {
-        display: flex; /* Display menu when open */
+        display: flex;
+    }
+
+    /* Menu item styling */
+    .main-nav ul li {
+        width: 100%; /* Make each item take full width of the dropdown */
+        text-align: center;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 10px;
+        color: #567C8D;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: #F5EFEB; /* Match dropdown background */
+        width: 100%; /* Make the links span the full width */
+        box-sizing: border-box; /* Ensure padding doesn’t affect width */
+    }
+
+    /* Optional: Add hover effect for menu items */
+    .main-nav ul li a:hover {
+        background-color: #E0DCD9; /* Slightly darker background on hover */
     }
 }
-  
+
 
 /* BLOG SECTION */
 
