@@ -20,11 +20,12 @@ body {
 /* Container to Center the Content */
 .container {
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
-    padding: 10px 20px; /* Padding inside the container */
+    margin: 0 auto;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap; /* Ensure items don’t wrap to the next line */
 }
 
 /* Header Styles */
@@ -42,8 +43,8 @@ body {
     font-size: 24px;
     font-family: 'Nimbus', sans-serif;
     font-weight: bold;
-    color: #567C8D; /* Logo color */
-    text-decoration: none; /* Remove underline */
+    color: #567C8D;
+    text-decoration: none;
 }
 
 /* Navigation Menu */
@@ -76,6 +77,7 @@ body {
 /* Social Icons Section */
 .social-icons {
     display: flex;
+    gap: 1px; /* Space between icons */
 }
 
 .social-icons a {
@@ -89,7 +91,7 @@ body {
 }
 
 .social-icons i {
-    font-size: 24px; /* Icon size */
+    font-size: 20px; /* Icon size */
 }
 
 /* Main Content Styles */
@@ -239,6 +241,117 @@ body {
     font-size: 16px;
     font-weight: bold;
 }
+
+/* Responsive Styles */
+
+/* For medium screens (tablets) */
+@media (max-width: 1200px) {
+    .photo-grid {
+        column-count: 2;
+    }
+    .main-nav ul {
+        gap: 30px;
+    }
+}
+
+/* For smaller screens (mobile) */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .welcome-message {
+        font-size: 40px;
+        padding: 0 15px;
+    }
+
+    /* Stack images vertically in mobile view */
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Blog posts in a single column */
+    .blog-posts {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .blog-link {
+        flex: 1 1 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .welcome-message {
+        font-size: 28px;
+    }
+
+    .main-nav ul {
+        font-size: 14px;
+    }
+
+    .social-icons i {
+        font-size: 20px;
+    }
+}
+
+/* Hamburger button styling */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #567C8D;
+    cursor: pointer;
+}
+  
+@media (max-width: 768px) {
+    .container {
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+
+    .logo a {
+        font-size: 20px;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger button on small screens */
+        font-size: 20px;
+    }
+
+    .social-icons i {
+        font-size: 20px;
+    }
+
+    /* Hide navigation menu by default on mobile and show only when toggled */
+    .main-nav ul {
+        display: none; /* Hidden by default on small screens */
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        background-color: #F5EFEB;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #567C8D;
+    }
+
+    .main-nav.menu-open ul {
+        display: flex; /* Display menu when open */
+    }
+}
+  
 
 /* BLOG SECTION */
 
