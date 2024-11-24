@@ -613,3 +613,133 @@ body {
     color: #FFF;
   }
   
+  /* Wrapper to position content over background */
+  .blog-post-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0;
+}
+
+
+/* Background image */
+.blog-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Adjust the height of the image */
+    background: url('images/capri_folder/blog_capri_cover.jpg') no-repeat center center; /* Replace with your image path */
+    background-size: cover; /* Ensures the image fills the area */
+    z-index: 1; /* Places it behind the content */
+}
+
+/* Content base (rectangular background) */
+.blog-content {
+    position: relative;
+    z-index: 2; /* Content above the background */
+    background-color: #F5EFEB;
+    margin-top: 300px; /* Adjust to leave space for the image */
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    max-width: 800px; /* Reduce the width of the content */
+    margin-left: auto;
+    margin-right: auto; /* Center the content horizontally */
+}
+
+
+/* Title styling */
+.blog-content h1 {
+    font-size: 36px;
+    color: #567C8D; /* Matches your global color palette */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Date styling */
+.blog-content .post-date {
+    font-size: 16px;
+    color: #567C8D;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Blog text */
+.post-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #567C8D;
+}
+
+/*IMAGES IN BLOGS*/
+/* Image Behind Paragraph */
+.image-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.image-wrapper p {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(245, 239, 235, 0.8); /* Add semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.image-wrapper .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.7; /* Optional: Add transparency to the background image */
+    border-radius: 8px; /* Match paragraph styling if needed */
+}
+
+/* Inline Images */
+.inline-image {
+    text-align: center; /* Center the image */
+    margin: 20px 0; /* Add spacing above and below the image */
+}
+
+.inline-image img {
+    width: 100%; /* Make image responsive */
+    max-width: 450px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+/*3 IMAGES*/
+
+/* Image Row */
+.image-row {
+    display: flex;
+    justify-content: center; /* Center the row horizontally */
+    align-items: center; /* Vertically align the images */
+    gap: 20px; /* Add space between the images */
+    margin: 20px 0; /* Add spacing around the row */
+  }
+  
+  /* Default Image Styling */
+  .image img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  }
+  
+  /* Small Images */
+  .image.small {
+    flex: 1; /* Allow small images to take less space */
+    max-width: 230px; /* Adjust the size of the small images */
+  }
+  
+  /* Large Image */
+  .image.large {
+    flex: 2; /* Make the middle image larger */
+    max-width: 300px; /* Adjust the size of the large image */
+  }
+  
