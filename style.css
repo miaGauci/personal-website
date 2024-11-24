@@ -706,40 +706,63 @@ body {
 
 .inline-image img {
     width: 100%; /* Make image responsive */
-    max-width: 450px; /* Limit the maximum width */
+    max-width: 700px; /* Limit the maximum width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
 }
 
-/*3 IMAGES*/
+/* Darkening Effect on Hover */
+.image-wrapper:hover img {
+    filter: brightness(0.7); /* Darkens the image */
+}
 
-/* Image Row */
-.image-row {
-    display: flex;
-    justify-content: center; /* Center the row horizontally */
-    align-items: center; /* Vertically align the images */
-    gap: 20px; /* Add space between the images */
-    margin: 20px 0; /* Add spacing around the row */
+/* Pinterest Icon Styling */
+.pinterest-icon {
+    position: absolute; /* Allows positioning relative to the wrapper */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensures perfect centering */
+    display: none; /* Hidden by default */
+    
+    
+    justify-content: center; /* Centers icon inside the circle */
+    align-items: center; /* Centers icon inside the circle */
+    z-index: 2; /* Ensures it appears above the image */
+}
+
+
+/* Pinterest Font Awesome Icon */
+.pinterest-icon i {
+    font-size: 24px; /* Adjust the size of the icon */
+    color: #E60023; /* Pinterest red color */
+}
+
+/* Pinterest Icon Image */
+.pinterest-icon img {
+    width: 30px; /* Adjust size of the Pinterest icon */
+    height: 30px;
+}
+
+/* Show Pinterest Icon on Hover */
+.image-wrapper:hover .pinterest-icon {
+    display: block; /* Display the icon when hovering over the image */
+}
+  
+/*GOOGLE MAP*/
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
+    height: 0;
+    overflow: hidden;
   }
   
-  /* Default Image Styling */
-  .image img {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-  }
-  
-  /* Small Images */
-  .image.small {
-    flex: 1; /* Allow small images to take less space */
-    max-width: 230px; /* Adjust the size of the small images */
-  }
-  
-  /* Large Image */
-  .image.large {
-    flex: 2; /* Make the middle image larger */
-    max-width: 300px; /* Adjust the size of the large image */
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
   
