@@ -20,26 +20,28 @@
   </head>
 <body>
 
-  <!-- Shared Header Section -->
+  <!-- Header Section -->
   <header class="site-header">
     <div class="container">
       <!-- Clickable logo that links to the Home Page (index.html) -->
       <div class="logo">
         <a href="index.html" style="text-decoration: none; color: inherit;">Mia Gauci</a>
+        <!-- Hamburger Menu Button -->
+        <!-- Hamburger Menu Button -->
+          <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+          <!-- Close Button -->
+          <button class="close-menu" onclick="toggleMenu()">&times;</button>
       </div>
-       <!-- Hamburger Menu Button (for mobile) -->
-       <button class="hamburger-menu" onclick="toggleMenu()">
-        ☰
-      </button>
       <!-- Navigation Menu -->
       <nav class="main-nav">
         <ul>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="photography.html">Photography</a></li>
-          <li><a href="about.html">About</a></li>
+          <!-- Links to their respective pages -->
+          <li><a href="blog.html">Blog</a></li> <!-- Link to Blog Page -->
+          <li><a href="photography.html">Photography</a></li> <!-- Link to Photography Page -->
+          <li><a href="about.html">About</a></li> <!-- Link to About Page -->
         </ul>
       </nav>
-      <!-- Social Icons -->
+      <!-- Social Icons Section -->
       <div class="social-icons">
         <a href="https://www.instagram.com/mia_gauci_/" target="_blank">
           <i class="fab fa-instagram"></i>
@@ -54,72 +56,51 @@
     </div>
   </header>
 
+    <!-- Full-Screen Hamburger Dropdown -->
+  <div class="hamburger-menu-overlay">
+    <button class="close-button" onclick="toggleMenu()">&times;</button>
+    <nav class="dropdown-menu">
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/mia_gauci_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.pinterest.com/mia_gauci_/" target="_blank"><i class="fab fa-pinterest"></i></a>
+        <a href="https://www.youtube.com/@miagauci5683" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </nav>
+  </div>
+
+
   <!-- Blog Post Section -->
   <section class="blog-section">
-    <div class="mosaic-grid">
-      
-      <!-- Blog Post 1 -->
-      <!-- .mosaic-item.landscape / .mosaic-item.portrait / .mosaic-item.square / .mosaic-item.large-square / .mosaic-item.custom-size-->
-      <div class="mosaic-item landscape">
-        <div class="overlay">
-          <div class="text">
-            <span class="date">October 18, 2024</span>
-            <h2>How to Explore Capri on a Budget:</h2>
-            <h3>A Perfect Day Trip Guide</h3>
-            <a href="capri_blog.html" class="read-more">Read More</a>
-          </div>
-        </div>
+    <!-- Blog Post 1 -->
+    <div class="blog-item">
+      <div
+        class="blog-image"
+        style="background-image: url('images/capri_folder/blog_capri_cover.jpg');">
       </div>
-
-      <!-- Blog Post 2 -->
-      <div class="mosaic-item portrait">
-        <div class="overlay">
-          <div class="text">
-            <span class="date">September 28, 2024</span>
-            <h2>Photography in Paris</h2>
-            <a href="#" class="read-more">Read More</a>
-          </div>
+      <!-- Overlay -->
+      <div class="blog-overlay">
+        <div class="blog-post-title">
+          <h2>How to Explore Capri on a Budget</h2>
+          <h3>A Perfect Day Trip Guide</h3>
         </div>
+        <a href="capri_blog.html" class="read-more">Read More</a> <!-- Link on "Read Me" only -->
       </div>
-
-      <!-- Blog Post 3 -->
-      <div class="mosaic-item square">
-        <div class="overlay">
-          <div class="text">
-            <span class="date">August 15, 2024</span>
-            <h2>Swiss Alps Adventure</h2>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog Post 4 -->
-      <div class="mosaic-item landscape">
-        <div class="overlay">
-          <div class="text">
-            <span class="date">July 10, 2024</span>
-            <h2>Amalfi Coast Escapade</h2>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more blog posts here... -->
-
     </div>
   </section>
+
 
   <!-- Shared Footer Section -->
   <footer class="site-footer">
     <p>Created by Mia Gauci</p>
   </footer>
 
-  <!-- JavaScript for Hamburger Menu Toggle -->
-  <script>
-    function toggleMenu() {
-      document.querySelector(".main-nav").classList.toggle("menu-open");
-    }
-  </script>
+  <script src="menu-toggle.js"></script>  
+
 
 </body>
 </html>

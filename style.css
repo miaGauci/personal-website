@@ -74,6 +74,8 @@ body {
     font-weight: 500;
 }
 
+/*----------------------------------------------------------------------------*/
+
 /* Social Icons Section */
 .social-icons {
     display: flex;
@@ -93,6 +95,10 @@ body {
 .social-icons i {
     font-size: 20px; /* Icon size */
 }
+
+/*----------------------------------------------------------------------------*/
+
+/*INDEX PAGE */
 
 /* Main Content Styles */
 .main-content {
@@ -145,24 +151,128 @@ body {
     transform: translateY(-50px); /* Move the third image upwards */
 }
 
-/* Landscape Section Styles */
-.landscape-section {
-    width: 100%; /* Full width of the section */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    background-color: #F5EFEB; /* Match background color */
-    text-align: center; /* Center content */
+@media (max-width: 768px) {
+    .image-container img:first-child,
+    .image-container img:nth-child(3) {
+        display: none; /* Hide the first and third images */
+    }
+
+    .image-container img:nth-child(2) {
+        display: block; /* Ensure the second image remains visible */
+        margin: 0 auto; /* Center the visible image */
+    }
 }
 
+/* Center the second image */
+.center-image {
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  /* Separator Line */
+  .separator-line {
+    margin: 20px auto; /* Space above and below the line */
+    border: none; /* Remove default border style */
+    height: 2px; /* Line thickness */
+    background-color: #567C8D; /* Match the global font color or choose another color */
+    width: 80%; /* Match the image width */
+    max-width: 400px; /* Optional: to limit the line width */
+  }
+  
+  /* Text Below Image */
+  .text-below-image {
+    text-align: center; /* Center-align text */
+    margin-top: 10px; /* Add space above the text */
+    width: 80%; /* Match the size of the image */
+    max-width: 400px; /* Ensure it aligns with the image width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text-below-image p {
+    font-size: 18px; /* Adjust font size */
+    line-height: 1.2; /* Better line spacing */
+    color: #567C8D; /* Match your global font color */
+  }
+  
+  .text-below-image strong {
+    font-size: 20px; /* Slightly larger for emphasis */
+    color: #2F4156; /* Darker color for emphasis */
+  }
+  
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Landscape Section */
+.landscape-section {
+    position: relative; /* Make section a containing block for positioning overlay */
+    width: 100%; /* Full width of the section */
+    margin: 0;
+    padding: 0;
+}
+
+/* Landscape Image */
 .landscape-image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover; /* Ensure image covers the full area */
-    margin: 0 auto;
+    object-fit: cover; /* Ensure the image covers the full area */
 }
 
-/* Blog Posts Section */
+/* Overlay Container */
+.landscape-overlay {
+    position: absolute; /* Position over the image */
+    top: 50%; /* Center vertically */
+    left: 5%; /* Align to the left with padding */
+    transform: translateY(-50%); /* Adjust vertical alignment */
+    color: white; /* Contrast against the image */
+    text-align: left; /* Left-align text */
+    padding: 20px;
+}
+
+/* Overlay Title */
+.overlay-title {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 20px 0; /* Bottom margin for spacing */
+    line-height: 1.2; /* Adjust line height */
+}
+
+.overlay-title em {
+    font-style: italic;
+    color: #FFD700; /* Highlighted word color */
+}
+
+/* Overlay Description */
+.overlay-description {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 16px;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+/* Overlay Button */
+.overlay-button {
+    font-family: 'Nimbus', sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: #567C8D;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 40px; /* Large gap between the button and description */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.overlay-button:hover {
+    background-color: #345C73; /* Darker color on hover */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Blog Posts Section in INDEX  */
 
 .blog-posts {
     display: flex;
@@ -179,7 +289,7 @@ body {
 }
 
 /* Individual Blog Post Styles */
-/* Individual Blog Post Styles */
+
 .blog-post {
     cursor: pointer; /* Pointer cursor for interaction */
     text-align: center;
@@ -199,7 +309,6 @@ body {
     transform: scale(1.02); /* Optional: slight scale effect on hover */
 }
 
-/* Blog Post Image Styles */
 /* Blog Post Image Styles */
 .blog-image {
     width: 100%; /* Make the image take full width of the container */
@@ -225,6 +334,7 @@ body {
     margin-bottom: 0;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 /* Footer Section Styles */
 .site-footer {
@@ -242,7 +352,9 @@ body {
     font-weight: bold;
 }
 
-/* Responsive Styles */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Responsive Styles for DIFFERENT PAGE SIZES*/
 
 /* For medium screens (tablets) */
 @media (max-width: 1200px) {
@@ -306,203 +418,252 @@ body {
     }
 }
 
-/* Hamburger button styling */
-.hamburger-menu {
-    display: none; /* Hidden by default */
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #567C8D;
-    cursor: pointer;
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Hamburger Menu and Close Button */
+.hamburger-menu,
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #567C8D;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.main-nav,
+.social-icons {
+  display: none; /* Hide navigation and social icons by default */
+}
+
+.hamburger-menu-overlay {
+    display: none; /* Hide the full-screen menu overlay by default */
+  }
+
+
+.close-menu {
+  display: none; /* Hidden by default */
+}
+
+/* When menu is active, show the close button and hide the hamburger */
+.hamburger-menu-overlay.active ~ .hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu-overlay.active ~ .close-menu {
+  display: block;
+}
+/* Full-Screen Hamburger Dropdown */
+.hamburger-menu-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F5EFEB; /* Background color */
+  z-index: 999; /* Above other elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  opacity: 0; /* Invisible by default */
+  pointer-events: none; /* Disable interactions */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out */
+}
+
+  
+  /* When menu is active */
+  .hamburger-menu-overlay.active {
+    opacity: 1; /* Fully visible */
+    pointer-events: all; /* Enable interactions */
+    display: flex; /* Flex display */
+  }
+
+
+.site-header.menu-active .main-nav,
+.site-header.menu-active .social-icons {
+    display: none; /* Hide when menu is active */
 }
   
-@media (max-width: 768px) {
-    .container {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 10px;
-    }
-
-    .logo a {
-        font-size: 18px; /* Reduce the font size if needed */
-    }
-
-    .social-icons {
-        display: flex;
-        gap: 2px; /* Reduce gap between social icons */
-        font-size: 10px;
-    }
-
-    /* Center the Hamburger Menu */
+  /* Hamburger button */
     .hamburger-menu {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        display: block;
+        top: 15px;
+        right: 15px; /* Align to the right */
+        z-index: 1001; /* Above other elements */
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Close button */
+    .close-button {
+        display: none; /* Hidden by default */
         font-size: 24px;
         background: none;
         border: none;
         color: #567C8D;
         cursor: pointer;
-    }
-
-    /* Navigation Menu - Centered Underneath Hamburger Toggle */
-    .main-nav ul {
-        display: none; /* Hidden by default */
         position: absolute;
-        top: 100%; /* Place it directly below the hamburger menu */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Center the dropdown */
-        width: auto; /* Width based on content */
-        flex-direction: column;
-        align-items: center; /* Center items horizontally */
-        gap: 10px;
-        padding: 10px 0;
-        background-color: #F5EFEB; /* Set a solid background color */
-        text-align: center;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+        top: 15px;
+        right: 15px; /* Same position as the hamburger */
+        z-index: 1001; /* Above overlay content */
     }
+  
+  /* Navigation menu in the overlay */
+  /* Dropdown menu items */
+.hamburger-menu-overlay .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 
-    /* Show the navigation menu when the 'menu-open' class is active */
-    .main-nav.menu-open ul {
-        display: flex;
-    }
-
-    /* Menu item styling */
-    .main-nav ul li {
-        width: 100%; /* Make each item take full width of the dropdown */
-        text-align: center;
-    }
-
-    .main-nav ul li a {
-        display: block;
-        padding: 10px;
-        color: #567C8D;
-        text-decoration: none;
-        font-weight: bold;
-        background-color: #F5EFEB; /* Match dropdown background */
-        width: 100%; /* Make the links span the full width */
-        box-sizing: border-box; /* Ensure padding doesn’t affect width */
-    }
-
-    /* Optional: Add hover effect for menu items */
-    .main-nav ul li a:hover {
-        background-color: #E0DCD9; /* Slightly darker background on hover */
-    }
 }
 
+.hamburger-menu-overlay .dropdown-menu ul li {
+    margin: 20px 0;
+}
 
-/* BLOG SECTION */
+.hamburger-menu-overlay .dropdown-menu ul li a {
+    text-decoration: none;
+    color: #567C8D;
+    font-size: 32px; /* Large font for full-screen menu */
+    font-weight: bold;
+}
+
+/* Social icons inside the overlay */
+.hamburger-menu-overlay .social-icons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px; /* Space between icons */
+}
+
+.hamburger-menu-overlay .social-icons a {
+    font-size: 24px;
+    color: #567C8D;
+    transition: color 0.3s ease;
+}
+
+.hamburger-menu-overlay .social-icons a:hover {
+    color: #345C73; /* Change color on hover */
+}
+
+/* Hide navigation and social icons by default */
+.main-nav,
+.social-icons {
+  display: none; /* Hide by default */
+}
+
+/* Responsive styles for screens 769px and larger */
+@media (min-width: 769px) {
+    .hamburger-menu-overlay {
+        display: none; /* Hide the full-screen menu overlay on large screens */
+      }
+      
+      .hamburger-menu,
+      .close-menu {
+        display: none; /* Hide hamburger and close buttons on larger screens */
+      }
+      
+      .main-nav,
+      .social-icons {
+        display: flex; /* Show navigation and social icons on larger screens */
+      }
+  }
+  
+
+/*----------------------------------------------------------------------------*/
+
+/* BLOG PAGE SECTION */
 
 /* Blog Section */
 .blog-section {
     background-color: #F5EFEB; /* Beige background */
-    padding: 15px 15px;
+    padding: 20px;
 }
 
-/* Mosaic Grid Layout */
-.mosaic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr)); /* Flexible grid */
-    grid-auto-rows: 200px; /* Default row height */
-    gap: 15px; /* Space between items */
+/* Blog Item Layout */
+.blog-item {
+    margin-bottom: 20px; /* Spacing between blog items */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    position: relative; /* For positioning overlay */
 }
 
-/* Mosaic Items: Landscape, Portrait, Square */
-.mosaic-item {
-    position: relative;
-    overflow: hidden;
+/* Blog Image Styling */
+.blog-image {
+    width: 100%; /* Full width */
+    height: 300px; /* Fixed height */
     background-size: cover;
     background-position: center;
-    border-radius: 3px;
-    transition: transform 0.3s ease-in-out; /* Scale on hover */
+    border-radius: 8px;
+    filter: brightness(0.9); /* Darken image */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add smooth hover effects */
 }
 
-/* Landscape Posts */
-.mosaic-item.landscape {
-    grid-column: span 3; /* Span across two columns */
-    grid-row: span 2; /* Default row height */
-    background-image: url('images/gozo.jpeg') /* Add your own image */
+/* Hover Effect for Blog Image */
+.blog-item:hover .blog-image {
+    transform: scale(1.05); /* Slight zoom on hover */
+    filter: brightness(0.7); /* Darken image */
+    border-radius: 8px;
 }
 
-/* Portrait Posts */
-.mosaic-item.portrait {
-    grid-column: span 1;
-    grid-row: span 2; /* Taller */
-    background-image: url('images/pool.jpeg'); /* Add your own image */
-}
-
-/* Square Posts */
-.mosaic-item.square {
-    grid-column: span 2;
-    grid-row: span 2; /* Same height and width */
-    background-image: url('images/umbrella.jpeg'); /* Add your own image */
-}
-
-/* Hover Effect */
-.mosaic-item:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
-}
-
-/* Overlay for text */
-.overlay {
+/* Blog Overlay */
+.blog-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Slightly visible by default */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: #F5EFEB; /* Beige matching the background */
+    text-align: center; /* Center-align text */
+    z-index: 2;
 }
 
-/* Increase the opacity of the overlay background on hover */
-.mosaic-item:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+/* Blog Title */
+.blog-post-title h2,
+.blog-post-title h3 {
+    margin: 0;
+    text-decoration: none; /* Prevent underline */
 }
 
-/* Text inside the overlay */
-.overlay .text {
-    color: white;
-    text-align: center;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease-in-out; /* Fade-in effect */
+.blog-post-title h2 {
+    font-size: 22px; /* Larger font for h2 */
+    font-family: 'Nimbus', sans-serif; /* Match "Read Me" font */
+    white-space: nowrap; /* Prevent line break */
+    color: #F5EFEB;
 }
 
-/* Show text on hover */
-.mosaic-item:hover .overlay .text {
-    opacity: 1; /* Show text on hover */
+.blog-post-title h3 {
+    font-size: 20px; /* Smaller font for h3 */
+    /*font-family: 'Nimbus', sans-serif;  Match "Read Me" font */
+    margin-top: 5px; /* Slight spacing */
+
+    color: #F5EFEB;
 }
 
-.overlay .text .date {
+/* Read Me Link */
+.read-more {
     font-family: 'Nimbus', sans-serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-.overlay .text h2 {
-    font-family: 'Nimbus', sans-serif;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.overlay .text .read-more {
-    font-family: 'Nimbus', sans-serif;
-    font-size: 14px;
-    color: #fff;
+    font-size: 13px;
+    color: #F5EFEB;
     text-decoration: underline;
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
 }
 
-.overlay .text .read-more:hover {
-    color: #ccc; /* Slight color change on hover */
+/* Show "Read Me" on Hover */
+.blog-item:hover .read-more {
+    display: block; /* Show "Read Me" */
+    opacity: 1; /* Make it visible */
 }
+
+  
+/*----------------------------------------------------------------------------*/
 
 /* Footer */
 .site-footer {
@@ -516,7 +677,8 @@ body {
     margin: 0;
 }
 
-/* PHOTOGRAPHY */
+/*----------------------------------------------------------------------------*/
+/* PHOTOGRAPHY PAGE STYLING */
 .photo-grid {
     column-count: 3; /* Default number of columns for desktop */
     column-gap: 10px; /* Space between columns */
@@ -550,6 +712,7 @@ body {
     }
 }
 
+/*----------------------------------------------------------------------------*/
   
 /* BLOG WRITEUP STYLE  */
 
@@ -670,7 +833,7 @@ body {
     color: #567C8D;
 }
 
-/*IMAGES IN BLOGS*/
+/*BLOG COVER IMAGE*/
 /* Image Behind Paragraph */
 .image-wrapper {
     position: relative;
@@ -698,6 +861,7 @@ body {
     border-radius: 8px; /* Match paragraph styling if needed */
 }
 
+/*IMAGES INSIDE THE BLOG */
 /* Inline Images */
 .inline-image {
     text-align: center; /* Center the image */

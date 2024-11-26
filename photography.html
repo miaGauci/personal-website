@@ -22,23 +22,28 @@
 </head>
 <body>
 
-  <!-- Shared Header Section -->
+  <!-- Header Section -->
   <header class="site-header">
     <div class="container">
+      <!-- Clickable logo that links to the Home Page (index.html) -->
       <div class="logo">
         <a href="index.html" style="text-decoration: none; color: inherit;">Mia Gauci</a>
+        <!-- Hamburger Menu Button -->
+        <!-- Hamburger Menu Button -->
+          <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+          <!-- Close Button -->
+          <button class="close-menu" onclick="toggleMenu()">&times;</button>
       </div>
-       <!-- Hamburger Menu Button (for mobile) -->
-       <button class="hamburger-menu" onclick="toggleMenu()">
-        ☰
-      </button>
+      <!-- Navigation Menu -->
       <nav class="main-nav">
         <ul>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="photography.html">Photography</a></li>
-          <li><a href="about.html">About</a></li>
+          <!-- Links to their respective pages -->
+          <li><a href="blog.html">Blog</a></li> <!-- Link to Blog Page -->
+          <li><a href="photography.html">Photography</a></li> <!-- Link to Photography Page -->
+          <li><a href="about.html">About</a></li> <!-- Link to About Page -->
         </ul>
       </nav>
+      <!-- Social Icons Section -->
       <div class="social-icons">
         <a href="https://www.instagram.com/mia_gauci_/" target="_blank">
           <i class="fab fa-instagram"></i>
@@ -53,6 +58,22 @@
     </div>
   </header>
 
+    <!-- Full-Screen Hamburger Dropdown -->
+  <div class="hamburger-menu-overlay">
+    <button class="close-button" onclick="toggleMenu()">&times;</button>
+    <nav class="dropdown-menu">
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/mia_gauci_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.pinterest.com/mia_gauci_/" target="_blank"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </nav>
+  </div>
   <!-- Photography Section -->
   <section class="photography-section">
     <div id="photoGrid" class="photo-grid"></div>
@@ -71,5 +92,7 @@
   </script>
 
   <script src="gallery.js"></script>
+  <script src="menu-toggle.js"></script>  
+
 </body>
 </html>
