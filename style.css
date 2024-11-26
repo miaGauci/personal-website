@@ -196,8 +196,8 @@ body {
   }
   
   .text-below-image strong {
-    font-size: 20px; /* Slightly larger for emphasis */
-    color: #2F4156; /* Darker color for emphasis */
+    font-size: 16px; /* Slightly larger for emphasis */
+    color: #567C8D; /* Darker color for emphasis */
   }
   
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -254,7 +254,7 @@ body {
 /* Overlay Button */
 .overlay-button {
     font-family: 'Nimbus', sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     color: white;
     background-color: #567C8D;
     padding: 10px 20px;
