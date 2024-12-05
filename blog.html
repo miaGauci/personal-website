@@ -101,6 +101,30 @@
 
   <script src="menu-toggle.js"></script>  
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    // Detect touch devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+        // Select all blog items
+        const blogItems = document.querySelectorAll(".blog-item");
+
+        blogItems.forEach(blogItem => {
+            // Add a click event listener to each blog item
+            blogItem.addEventListener("click", () => {
+                // Find the "Read More" link inside the blog item
+                const readMoreLink = blogItem.querySelector(".read-more");
+
+                // Navigate to the link's href
+                if (readMoreLink) {
+                    window.location.href = readMoreLink.getAttribute("href");
+                }
+            });
+        });
+      }
+    });
+
+  </script>
+
 
 </body>
 </html>
