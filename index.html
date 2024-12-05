@@ -76,34 +76,49 @@
     </nav>
   </div>
 
-  <!-- Welcome Message Section -->
-  <div class="welcome-message">
+  <!-- <div class="welcome-message">
     <span>Welcome to </span><br>
     <span>Mia's corner !</span>
-  </div>
+  </div> 
 
-  <!-- Image Container Section -->
-  <div class="image-container">
-    <img src="images/capri_rock.jpg" alt="Image 1 Description">
-    <img src="images/mia_mountains.jpg" alt="Image 2 Description">
-    <img src="images/boat.jpeg" alt="Image 3 Description">
-  </div>
+<section class="landscape-section">
+  <img src="images/IMG_2600.jpg" alt="Landscape Image of Gozo" class="landscape-image">
+</section>
 
-  <div class="text-below-image">
+<div class="image-container">
+  <img src="images/capri_rock.jpg" alt="Image 1 Description">
+  <img src="images/mia_mountains.jpg" alt="Image 2 Description">
+  <img src="images/boat.jpeg" alt="Image 3 Description">
+</div>
+
+<div class="image-container">
+  <img src="images/capri_rock.jpg" alt="Image 1 Description">
+  <img src="images/mia_mountains.jpg" alt="Image 2 Description">
+  <img src="images/boat.jpeg" alt="Image 3 Description">
+</div>
+
+<div class="text-below-image">
     <hr class="separator-line">
     <p>
       <strong>Join me as I explore the world, one adventure at a time.</strong>
     </p>
   </div>
+-->
+  
+
+  <!-- Responsive Image Section -->
+<section class="responsive-section">
+  <img src="images/PORTRAIT_WELCOME.png" alt="Portrait Image" class="responsive-image portrait">
+  <img src="images/WELCOME.png" alt="Landscape Image of Gozo" class="responsive-image landscape">
+</section>
 
   <!-- First Landscape Image Section -->
 <section class="landscape-section">
   <img src="images/gozo1.jpeg" alt="Landscape Image of Gozo" class="landscape-image">
   <!-- Overlay Content -->
   <div class="landscape-overlay">
-    <h1 class="overlay-title">Where culture and creativity <em>collide</em>.</h1>
-    <p class="overlay-description">Exploring the world with a focus on discovering hidden gems, cultural experiences, and unforgettable moments.</p>
-    <a href="photography.html" class="overlay-button">View My Photography</a>
+    <h1 class="overlay-title">Join me as I explore the world, one adventure at a <em>time </em>.</h1>
+    <a href="photography.html" class="overlay-button">View My Photography <span class="arrow">&rarr;</span></a>
   </div>
 </section>
 
@@ -142,12 +157,65 @@
     <img src="images/gozo2.jpeg" alt="Landscape Image of Gozo" class="landscape-image">
   </section>
 
-  <!-- Footer Section -->
-  <footer class="site-footer">
-    <p>Created by Mia Gauci</p>
-  </footer>
-
   <script src="menu-toggle.js"></script>  
+
+    <!-- Shared Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <p>Mia Gauci</p>
+        </div>
+    
+        <!-- Navigation Links -->
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="photography.html">Photography</a>
+          <a href="about.html">About</a>
+        </div>
+    
+        <!-- Social Icons -->
+        <div class="footer-social-icons">
+          <a href="https://www.instagram.com/mia_gauci_/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.pinterest.com/mia_gauci_/" target="_blank">
+            <i class="fab fa-pinterest"></i>
+          </a>
+          <a href="https://www.youtube.com/@miagauci5683" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+    
+        <!-- Separator Line -->
+        <hr class="footer-separator">
+    
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          <p>COPYRIGHT 2024 MIA GAUCI</p>
+        </div>
+
+        <!-- Separator Line -->
+        <hr class="footer-separator">
+    
+        <!-- Scroll to Top Button -->
+        <a href="#top" class="back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+    
+
+  <script>
+    // Smooth scroll to the top
+    document.querySelector('.back-to-top').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+  </script>
+
 
 </body>
 </html>
