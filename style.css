@@ -205,6 +205,8 @@ body {
 /* General styles for the section */
 .responsive-section {
     position: relative;
+    margin-bottom: 100px; /* Gap after the responsive section */
+
   }
   
   /* Hide both images by default */
@@ -301,7 +303,7 @@ body {
     .landscape-section {
         position: relative;
         width: 100%;
-        margin: 0;
+        margin-top: 70px; /* Optional: Add space before the landscape section */
         padding: 0;
     }
 
@@ -358,67 +360,192 @@ body {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-/* Blog Posts Section in INDEX  */
+/* Blog Section Heading */
 
-.blog-posts {
+/* Blog Section Container */
+.home-blog-section {
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center the section */
+    padding: 50px 20px; /* Add space around the section */
+    text-align: center; /* Center the heading */
+  }
+  
+  /* Heading Container */
+  .home-blog-heading-container {
+    margin-top: 3px; /* Add space between heading and blog posts */
+    margin-bottom: 3px; /* Add space between heading and blog posts */
+    text-align: center; /* Center-align the heading */
+  }
+  
+  /* Blog Heading Styling */
+  .home-blog-heading {
+    font-size: 28px; /* Adjust font size */
+    font-family: 'Nimbus', sans-serif; /* Desired font */
+    font-weight: bold;
+    color: #567C8D; /* Heading color */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Add letter spacing */
+    margin: 0; /* Remove default margin */
+    position: relative;
+  }
+  
+  /* Optional: Add a line below the heading */
+  .home-blog-heading::after {
+    content: '';
+    display: block;
+    width: 80px; /* Adjust line width */
+    height: 3px; /* Line thickness */
+    background: #567C8D; /* Line color */
+    margin: 10px auto 0; /* Center the line below the heading */
+  }
+  
+  /* Blog Posts Container */
+  .home-blog-posts {
     display: flex;
-    justify-content: space-between; /* Spread items evenly */
-    margin: 50px auto; /* Center the section and add space around */
-    width: 90%; /* Control the width of the section */
-}
-
-/* Blog Link Styling */
-.blog-link {
+    justify-content: center; /* Center the blog posts */
+    gap: 20px; /* Space between posts */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable smooth snapping */
+    margin: 0 auto; /* Center the posts container */
+    padding: 20px 0; /* Space around the blog posts */
+    max-width: 1200px; /* Restrict the width for centring */
+  }
+  
+/* Home Page Blog Posts Section */
+.home-blog-posts {
+    display: flex;
+    justify-content: flex-start; /* Center blog posts */
+    align-items: flex-start; /* Align blog posts to the top */
+    gap: 20px; /* Space between posts */
+    padding: 70px 20px; /* Add top and bottom padding */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable smooth snapping */
+    position: relative; /* For shadow positioning */
+    margin: 0 auto; /* Center the container within the page */
+    scrollbar-gutter: stable both-edges; /* Stabilize the scrollbar position */
+  }
+  
+  .home-blog-link {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit text color */
-    display: block; /* Make the link fill the entire block */
-}
+  }
+  
+  /* Individual Blog Post */
+.home-blog-post {
+    position: relative;
+    flex: 0 0 auto; /* Prevent shrinking or growing */
+    width: 300px; /* Fixed width for all posts */
+    height: 400px; /* Fixed height for all posts */
+    background-size: cover; /* Ensure the image fills the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    display: flex;
+    flex-direction: column; /* Stack content */
+    justify-content: flex-end; /* Push text to the bottom */
+  }
+  
+  .home-blog-content {
+    position: absolute; /* Position text absolutely inside the blog post */
+    bottom: 0; /* Align text to the bottom */
+    width: 100%; /* Match the full width of the container */
+    padding: 15px; /* Add space around the text */
+    color: white; /* Ensure text is readable */
+    text-align: left; /* Align text to the left */
+    box-shadow: none; /* Remove unnecessary block shadows */
+    margin-left: 5px;
+    margin-right: 5px;
 
-/* Individual Blog Post Styles */
+  }
+  
+  .home-blog-category {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for small text */
+  }
+  
+  .home-blog-content h3 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for title */
+  }
+  
+  .home-blog-content p {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    color: #ddd; /* Lighter text for additional info */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for smaller text */
 
-.blog-post {
-    cursor: pointer; /* Pointer cursor for interaction */
-    text-align: center;
-    height: 550px; 
-    background-color: #F5EFEB;
-    padding: 20px;
-    border: 1px solid #DDD;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
-    flex: 1; /* Allow each blog post to flex equally */
-    margin: 0 10px; /* Add margin between the posts */
-    transition: transform 0.2s ease; /* Optional: smooth scale effect */
-    max-width: 350px; /* Set a maximum width to keep each post proportional */
-}
+  }
+
+/* Shadow Indicator */
+.home-blog-posts::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the container */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the shadow */
+    pointer-events: none; /* Prevent interference with interactions */
+    z-index: 1; /* Ensure it's above the scrollbar but below the posts */
+  }
+
+  /* Scrollbar Styling */
+.home-blog-posts::-webkit-scrollbar {
+    height: 10px; /* Make scrollbar a bit thicker for visibility */
+    padding-left: 5px;
+  }
+  
+  .home-blog-posts::-webkit-scrollbar-thumb {
+    background: #567C8D; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded scrollbar thumb */
+    padding-left: 5px;
+
+  }
+  
+  .home-blog-posts::-webkit-scrollbar-track {
+    background: #d3d3d3; /* Light grey background for the track */
+    border-radius: 5px; /* Rounded track corners */
+    margin-left: 5px;
+    margin-right: 5px;
 
 
-.blog-post:hover {
-    transform: scale(1.02); /* Optional: slight scale effect on hover */
-}
+  }
+  /* Individual Blog Post */
+  .home-blog-post {
+    flex: 0 0 auto; /* Prevent shrinking */
+    z-index: 2; /* Ensure posts are above the shadow */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .home-blog-posts {
+      padding: 20px 20px 20px; /* Reduce padding on smaller screens */
+    }
+  
+    .home-blog-post {
+      width: 250px; /* Adjust width for smaller screens */
+      height: 350px; /* Adjust height for smaller screens */
+    }
+  }
 
-/* Blog Post Image Styles */
-.blog-image {
-    width: 100%; /* Make the image take full width of the container */
-    height: auto;
-    max-height: 350px; /* Increase the max height to maintain a portrait aspect ratio */
-    object-fit: cover; /* Maintain aspect ratio and fill the container */
-    margin-bottom: 15px; /* Space below the image */
-}
-
-
-/* Blog Post Text Styles */
-.blog-post h3 {
-    font-family: 'Nimbus', sans-serif;
-    color: #567C8D;
-    font-size: 24px;
-    margin-bottom: 10px; /* Space below the heading */
-}
-
-.blog-post p {
-    font-family: 'Casanova', sans-serif;
-    color: #567C8D;
-    font-size: 16px;
-    margin-bottom: 0;
-}
+  /* Responsive Styles for Alignment */
+@media (max-width: 1000px) {
+    .home-blog-posts {
+      justify-content: flex-start; /* Align first post to the left */
+      padding: 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .home-blog-post {
+      width: 250px; /* Adjust width for smaller screens */
+      height: 350px; /* Adjust height for smaller screens */
+    }
+  }
 
 .back-to-top{
     color: #FFFFFF; /* Icon color */
@@ -434,7 +561,7 @@ body {
 /* Footer Section Styles */
 .site-footer {
     width: 100%;
-    background-color: #2F4156; /* Dark background */
+    background-color: #567C8D; /* Dark background */
     color: #FFFFFF; /* White text */
     padding: 20px 0 60px;
     text-align: center;
@@ -524,43 +651,6 @@ body {
     }
     .main-nav ul {
         gap: 30px;
-    }
-}
-
-/* For smaller screens (mobile) */
-@media (max-width: 768px) {
-    /* Header adjustments */
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .welcome-message {
-        font-size: 40px;
-        padding: 0 15px;
-    }
-
-    /* Stack images vertically in mobile view */
-    .image-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Blog posts in a single column */
-    .blog-posts {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .blog-link {
-        flex: 1 1 100%;
-        margin: 0 auto;
     }
 }
 
@@ -746,6 +836,7 @@ body {
 .blog-section {
     background-color: #F5EFEB; /* Beige background */
     padding: 20px;
+    
 }
 
 /* Blog Item Layout */
