@@ -662,6 +662,43 @@ body {
     opacity: 1; /* Make it visible */
 }
 
+/* Responsive Styles for Blog Section */
+@media (max-width: 768px) {
+    /* Blog Image: Adjust height for smaller screens */
+    .blog-image {
+        height: 200px; /* Reduce height for smaller screens */
+    }
+
+    /* Blog Overlay: Ensure it stays centered */
+    .blog-overlay {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 10px; /* Add padding for smaller devices */
+    }
+
+    /* Blog Title: Adjust font sizes for smaller screens */
+    .blog-post-title h2 {
+        font-size: 18px; /* Reduce size for smaller screens */
+        white-space: normal; /* Allow line breaks for long titles */
+        word-wrap: break-word; /* Break long words if necessary */
+        overflow: hidden; /* Prevent overflow */
+        text-align: center; /* Center align title */
+    }
+
+    .blog-post-title h3 {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        margin-top: 5px; /* Maintain spacing */
+    }
+
+    /* Adjust "Read Me" Button */
+    .read-more {
+        font-size: 14px; /* Smaller font size for button */
+        margin-top: 10px; /* Ensure spacing from title */
+    }
+}
+
   
 /*----------------------------------------------------------------------------*/
 
