@@ -316,7 +316,7 @@ body {
 /* Overlay Container */
 .landscape-overlay {
     position: absolute; /* Position over the image */
-    top: 70%; /* Center vertically */
+    top: 50%; /* Center vertically */
     left: 5%; /* Align to the left with padding */
     transform: translateY(-50%); /* Adjust vertical alignment */
     color: white; /* Contrast against the image */
@@ -355,8 +355,8 @@ body {
     background-color: #567C8D;
     padding: 10px 20px;
     text-decoration: none;
-    padding-top: 200px;
-    padding-left: 100px;
+    padding-top: 12px;
+    padding-left: 30px;
     border-radius: 5px;
     margin-top: 50px; /* Large gap between the button and description */
     display: inline-block;
@@ -485,15 +485,14 @@ body {
 /* Home Page Blog Posts Section */
 .home-blog-posts {
     display: flex;
-    justify-content: flex-start; /* Center blog posts */
+    justify-content: center; /* Ensure posts are centred */
     align-items: flex-start; /* Align blog posts to the top */
     gap: 20px; /* Space between posts */
     padding: 70px 20px; /* Add top and bottom padding */
     overflow-x: auto; /* Enable horizontal scrolling */
     scroll-snap-type: x mandatory; /* Enable smooth snapping */
-    position: relative; /* For shadow positioning */
     margin: 0 auto; /* Center the container within the page */
-    scrollbar-gutter: stable both-edges; /* Stabilize the scrollbar position */
+    max-width: 1200px; /* Restrict the container width */
   }
   
   .home-blog-link {
@@ -596,6 +595,7 @@ body {
   /* Responsive Styles */
   @media (max-width: 768px) {
     .home-blog-posts {
+      justify-content: flex-start; /* Align first post to the left */
       padding: 20px 20px 20px; /* Reduce padding on smaller screens */
     }
   
@@ -608,7 +608,6 @@ body {
   /* Responsive Styles for Alignment */
 @media (max-width: 1000px) {
     .home-blog-posts {
-      justify-content: flex-start; /* Align first post to the left */
       padding: 20px; /* Adjust padding for smaller screens */
     }
   
