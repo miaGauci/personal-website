@@ -9,9 +9,13 @@
     src: url('CasanovaRegular-gx0J4.otf') format('truetype');
 }
 
+
+
 /* Global Styles */
 body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Disable horizontal scrolling */
     font-family: 'Casanova', sans-serif;
     background-color: #F5EFEB; /* Beige background */
     color: #567C8D; /* Global font color */
@@ -176,7 +180,6 @@ body {
     height: 2px; /* Line thickness */
     background-color: #567C8D; /* Match the global font color or choose another color */
     width: 80%; /* Match the image width */
-    max-width: 400px; /* Optional: to limit the line width */
   }
   
   /* Text Below Image */
@@ -206,12 +209,29 @@ body {
 .responsive-section {
     position: relative;
     margin-bottom: 100px; /* Gap after the responsive section */
-
+    
   }
   
   /* Hide both images by default */
   .responsive-image {
     display: none;
+    background: linear-gradient(transparent, #F5EFEB); /* Gradient blending into the background */
+
+  }
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust the height for a bigger wave */
+    z-index: 2;
+    pointer-events: none; /* Prevent interactions */
+  }
+
+  .wave path:first-of-type {
+    filter: blur(15px); /* Enhance the shadow with a blur effect */
+    transform: translateY(50px); /* Push the shadow further down */
   }
   
   /* Display the portrait image for screens less than 768px */
@@ -228,6 +248,52 @@ body {
       display: block;
       width: 100%; /* Adjust width as needed */
     }
+  }
+  
+
+  /* About Me Section */
+.about-me-section {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: #F5EFEB;
+    padding: 20px 20px;
+    margin-top: -100px; /* Overlap with the previous section */
+    padding-top: -100px; 
+    padding-left: 1px;
+  }
+  
+  /* Dynamic Shape */
+  .about-me-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #567C8D;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: -1; /* Push the shape behind the content */
+  }
+  
+  /* About Me Content */
+  .about-me-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-me-content h2 {
+    font-size: 28px;
+    font-family: 'Nimbus', sans-serif;
+    color: #345C73;
+    margin-bottom: 20px;
+  }
+  
+  .about-me-content p {
+    font-size: 16px;
+    font-family: 'Casanova', sans-serif;
+    color: #567C8D;
+    line-height: 1.8;
   }
   
 
@@ -250,12 +316,13 @@ body {
 /* Overlay Container */
 .landscape-overlay {
     position: absolute; /* Position over the image */
-    top: 50%; /* Center vertically */
+    top: 70%; /* Center vertically */
     left: 5%; /* Align to the left with padding */
     transform: translateY(-50%); /* Adjust vertical alignment */
     color: white; /* Contrast against the image */
     text-align: left; /* Left-align text */
-    padding: 20px;
+    padding: 50px;
+    bottom: 5%;
 }
 
 /* Overlay Title */
@@ -285,13 +352,19 @@ body {
     font-family: 'Nimbus', sans-serif;
     font-size: 15px;
     color: white;
-    background-color: #9b9ea0;
+    background-color: #567C8D;
     padding: 10px 20px;
     text-decoration: none;
+    padding-top: 200px;
+    padding-left: 100px;
     border-radius: 5px;
-    margin-top: 20px; /* Large gap between the button and description */
+    margin-top: 50px; /* Large gap between the button and description */
     display: inline-block;
     transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: -65px;
+    left: 25%; /* Center horizontally */
+    
 }
 
 .overlay-button:hover {
@@ -300,30 +373,25 @@ body {
 
 /* Responsive Styles for Landscape Section */
 @media (max-width: 768px) {
-    .landscape-section {
-        position: relative;
-        width: 100%;
-        margin-top: 70px; /* Optional: Add space before the landscape section */
-        padding: 0;
+      .landscape-section {
+        width: 100%; /* Ensure the section takes the full width */
+        overflow: hidden; /* Prevent overflow issues */
     }
 
     .landscape-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover; /* Maintain aspect ratio */
-        transform: scale(1.2); /* Enlarge the image slightly */
-        transition: transform 0.3s ease; /* Smooth animation for scaling */
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the section */
+        transform: none; /* Remove any scaling */
+        transition: none; /* Disable transitions for smoother resizing */
     }
 
     .landscape-overlay {
-        position: absolute;
-        top: 10%; /* Adjust overlay position for smaller screens */
-        left: 5%; /* Maintain consistent padding from the left */
-        transform: none; /* Remove vertical alignment transform */
-        width: 90%; /* Restrict width to avoid overflow */
-        padding: 10px; /* Add padding for mobile */
+        top: 50%; /* Center the overlay vertically */
+        left: 10%; /* Add padding from the left */
+        width: 80%; /* Restrict overlay width to prevent text overflow */
+        padding: 10px; /* Add spacing for better readability */
     }
-
     .overlay-title {
         font-size: 18px; /* Reduce font size for smaller screens */
         line-height: 1.3; /* Adjust line height */
@@ -365,15 +433,19 @@ body {
 /* Blog Section Container */
 .home-blog-section {
     width: 100%; /* Full width */
-    margin: 0 auto; /* Center the section */
+    margin: 0 ; /* Center the section */
     padding: 50px 20px; /* Add space around the section */
     text-align: center; /* Center the heading */
+    margin-left: 1px;
+    padding-left: 1px;
   }
   
   /* Heading Container */
   .home-blog-heading-container {
     margin-top: 3px; /* Add space between heading and blog posts */
     margin-bottom: 3px; /* Add space between heading and blog posts */
+    margin-left: 1px;
+    padding-left: 1px;
     text-align: center; /* Center-align the heading */
   }
   
@@ -383,7 +455,6 @@ body {
     font-family: 'Nimbus', sans-serif; /* Desired font */
     font-weight: bold;
     color: #567C8D; /* Heading color */
-    text-transform: uppercase; /* Make the text uppercase */
     letter-spacing: 2px; /* Add letter spacing */
     margin: 0; /* Remove default margin */
     position: relative;
@@ -593,7 +664,7 @@ body {
   }
   
   .footer-links a {
-    font-family: 'Borneandrawn', sans-serif;
+    font-family: 'Casanova', sans-serif;
     font-size: 16px;
     color: #FFFFFF;
     text-decoration: none;
@@ -632,7 +703,7 @@ body {
   
   /* Footer Copyright */
   .footer-copyright p {
-    font-family: 'Borneandrawn', sans-serif;
+    font-family: 'Casanova', sans-serif;
     font-size: 14px;
     color: #FFFFFF;
     margin: 10px 0;
