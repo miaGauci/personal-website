@@ -362,7 +362,7 @@ body {
     display: inline-block;
     transition: background-color 0.3s ease;
     position: absolute;
-    bottom: -65px;
+    bottom: -40px;
     left: 25%; /* Center horizontally */
     
 }
