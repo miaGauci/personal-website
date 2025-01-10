@@ -1144,7 +1144,7 @@ body {
 
 
 /* Background image */
-.blog-background {
+.blog-capri-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -1153,6 +1153,17 @@ body {
     background: url('images/capri_folder/blog_capri_cover.jpg') no-repeat center center; /* Replace with your image path */
     background-size: cover; /* Ensures the image fills the area */
     z-index: 1; /* Places it behind the content */
+}
+
+.blog-marrakech-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px; /* Adjust the height of the image */
+  background: url('images/morocco_folder/jardin_m_fountain_l.JPG') no-repeat center center; /* Replace with your image path */
+  background-size: cover; /* Ensures the image fills the area */
+  z-index: 1; /* Places it behind the content */
 }
 
 /* Content base (rectangular background) */
